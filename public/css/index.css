@@ -1,0 +1,13 @@
+body {
+  font-family: arial;
+}
+
+h1, h5 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.container {
+  width: 800px;
+  margin: auto;
+}
