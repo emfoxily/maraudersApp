@@ -38,6 +38,13 @@ app.use(express.urlencoded({extended: false}))
 // use PUT and DELETE verbs (HTML only allows GET and POST)
 app.use(methodOverride('_method'))
 
+// use express session!
+app.use(session({
+  secret: "mischiefmanaged",
+  resave: false,
+  saveUninitialized: false
+}))
+
 // routes!
 // index / sock store!
 app.get('/', (req, res) => {
