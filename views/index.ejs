@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>THE LAUGHING SOCK</title>
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
+    <div class = "container">
+      <h1>the laughing sock</h1>
+      <h5>quality socks est. 1932</h5>
+      <div class = "productContainer">
+        <% for (i = 0; i < socks.length; i++) { %>
+          <div class = "productBox">
+            <a href = "<%= socks[i].id %>">
+              <img src = "<%= socks[i].img %>"/>
+            </a>
+            <h5>
+              "<%= socks[i].name %>"
+            </h5>
+            <li>
+              $<%= socks[i].price %>.00
+            </li>
+          </div>
+        <% } %>
+    </div>
+  </body>
+</html>
