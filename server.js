@@ -95,6 +95,13 @@ app.get('/:id/edit', (req, res) => {
   })
 })
 
+// delete!
+app.delete('/:id', (req, res) => {
+  Socks.findByIdAndRemove(req.params.id, (error, data)=> {
+    res.redirect('/')
+  })
+})
+
 // listen!
 app.listen(PORT, () => {
   console.log('I solemnly swear that I am up to no good...');

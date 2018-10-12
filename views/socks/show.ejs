@@ -7,7 +7,11 @@
   </head>
   <body>
     <header>
-      <h1>THE LAUGHING SOCK</h1>
+      <a href="/">
+        <h1>
+          THE LAUGHING SOCK
+        </h1>
+      </a>
     </header>
     <div class = "container">
       <div class = "productBox">
@@ -17,12 +21,16 @@
           <%= sock.description %>
         </p>
         <li>
-          <%= sock.qty %>
+          QUANTITY: <%= sock.qty %>
         </li>
         <a href = "<%= sock.id %>/edit">
           <button>
             EDIT
           </button>
+        </a>
+        <form action="/<%= sock.id %>?_method=DELETE" method="POST">
+          <input type="submit" value="REMOVE">
+        </form>
       </div>
     </div>
   </body>
