@@ -11,7 +11,7 @@ const bcrypt = require('bcrypt')
 const PORT = process.env.PORT || 3000
 
 // database!
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/' + 'maraudersApp'
+const MONGODB_URI = 'mongodb://heroku_2wm3xvfz:h9vpt2cja5mrs56ud0s52e5jgj@ds227853.mlab.com:27853/heroku_2wm3xvfz' || process.env.MONGODB_URI || 'mongodb://localhost/' + 'maraudersApp'
 
 // connect to mongo!
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
@@ -45,8 +45,14 @@ app.use(session({
 }))
 
 // controllers!
-const sockController = require('./controllers/sockShop.js')
-app.use('/', sockController)
+const storeController = require('./controllers/store.js')
+app.use('/', storeController)
+
+const sessionsController = require('./controllers/sessions.js')
+app.use('/new', sessionsController)
+
+// const userController = require('./controllers/wizards.js')
+// app.use('/register', userController)
 
 // listen!
 app.listen(PORT, () => {
