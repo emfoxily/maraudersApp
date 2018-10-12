@@ -15,6 +15,7 @@ const sockSchema = Schema({
     min: 0,
     required: true
   },
+  description: String,
   qty: {
     type: Number,
     min: 0,
@@ -23,12 +24,11 @@ const sockSchema = Schema({
   inStock: {
     type: Boolean,
     default: true
-  },
-  description: String
+  }
 })
 
 // model!
 const Sock = mongoose.model('Sock', sockSchema)
 
 // export!
-module.exports = Sock;
+module.exports = Sock
