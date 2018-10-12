@@ -68,6 +68,17 @@ app.get('/', (req, res) => {
 //   console.log('added sock data');
 // })
 
+// create!
+app.get('/create', (req, res) => {
+  res.render('socks/create.ejs')
+})
+
+app.post('/', (req, res) => {
+  Socks.create(req.body, (error, createdItem) => {
+    res.redirect('/')
+  })
+})
+
 // show!
 app.get('/:id', (req, res) => {
   Socks.findById(req.params.id, (error, foundSock) => {
