@@ -5,8 +5,6 @@ const mongoose = require('mongoose')
 const app = express()
 const db = mongoose.connection;
 const session = require('express-session')
-const Socks = require('./models/sockSchema.js')
-const sockSeed = require('./models/socks.js')
 
 // port!
 const PORT = process.env.PORT || 3000
@@ -45,73 +43,9 @@ app.use(session({
   saveUninitialized: false
 }))
 
-// routes!
-// index / sock store!
-app.get('/', (req, res) => {
-  // if the current user is a wizard, show wand shop
-  if (req.session.currentUser) {
-    Wands.find({}, (error, allWands) => {
-      res.render('wandShop/index.ejs')
-    })
-  } else {
-  // else, show the sock shop
-    Socks.find({}, (error, allSocks) => {
-      res.render('index.ejs', {
-        socks: allSocks
-      })
-    })
-  }
-})
-
-// Socks.create( sockSeed, (error, data) => {
-//   if (error) console.log(error.message);
-//   console.log('added sock data');
-// })
-
-// create!
-app.get('/create', (req, res) => {
-  res.render('socks/create.ejs')
-})
-
-app.post('/', (req, res) => {
-  Socks.create(req.body, (error, createdItem) => {
-    res.redirect('/')
-  })
-})
-
-// show!
-app.get('/:id', (req, res) => {
-  Socks.findById(req.params.id, (error, foundSock) => {
-    res.render('socks/show.ejs', {
-      sock: foundSock
-    })
-  })
-})
-
-// edit!
-app.put('/:id', (req, res) => {
-  Socks.findByIdAndUpdate(req.params.id, req.body, { new: true }, (error, updated) => {
-    res.redirect('/')
-  })
-})
-
-app.get('/:id/edit', (req, res) => {
-  Socks.findById(req.params.id, (error, foundSock) => {
-    res.render(
-      'socks/update.ejs',
-      {
-        sock: foundSock
-      }
-    )
-  })
-})
-
-// delete!
-app.delete('/:id', (req, res) => {
-  Socks.findByIdAndRemove(req.params.id, (error, data)=> {
-    res.redirect('/')
-  })
-})
+// controllers!
+const sockController = require('./controllers/sockShop.js')
+app.use('/', sockController)
 
 // listen!
 app.listen(PORT, () => {
