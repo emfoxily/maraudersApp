@@ -48,19 +48,19 @@ app.use(session({
 // routes!
 // index / sock store!
 app.get('/', (req, res) => {
-  // // if the current user is a wizard, show wand shop
-  // if (req.session.currentUser) {
-  //   Wands.find({}, (error, allWands) => {
-  //     res.render('wandShop/index.ejs')
-  //   })
-  // } else {
+  // if the current user is a wizard, show wand shop
+  if (req.session.currentUser) {
+    Wands.find({}, (error, allWands) => {
+      res.render('wandShop/index.ejs')
+    })
+  } else {
   // else, show the sock shop
     Socks.find({}, (error, allSocks) => {
       res.render('index.ejs', {
         socks: allSocks
       })
     })
-  // }
+  }
 })
 
 // Socks.create( sockSeed, (error, data) => {
@@ -69,7 +69,31 @@ app.get('/', (req, res) => {
 // })
 
 // show!
-app.get('/:id')
+app.get('/:id', (req, res) => {
+  Socks.findById(req.params.id, (error, foundSock) => {
+    res.render('socks/show.ejs', {
+      sock: foundSock
+    })
+  })
+})
+
+// edit!
+app.put('/:id', (req, res) => {
+  Socks.findByIdAndUpdate(req.params.id, req.body, { new: true }, (error, updated) => {
+    res.redirect('/')
+  })
+})
+
+app.get('/:id/edit', (req, res) => {
+  Socks.findById(req.params.id, (error, foundSock) => {
+    res.render(
+      'socks/update.ejs',
+      {
+        sock: foundSock
+      }
+    )
+  })
+})
 
 // listen!
 app.listen(PORT, () => {

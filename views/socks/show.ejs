@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>THE LAUGHING SOCK - <%= sock.name %></title>
+    <link rel="stylesheet" href="css/show.css">
+  </head>
+  <body>
+    <header>
+      <h1>THE LAUGHING SOCK</h1>
+    </header>
+    <div class = "container">
+      <div class = "productBox">
+        <h2><%= sock.name %></h2>
+        <img src = "<%= sock.img %>"/>
+        <p>
+          <%= sock.description %>
+        </p>
+        <li>
+          <%= sock.qty %>
+        </li>
+        <a href = "<%= sock.id %>/edit">
+          <button>
+            EDIT
+          </button>
+      </div>
+    </div>
+  </body>
+</html>
