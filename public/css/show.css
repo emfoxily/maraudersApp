@@ -1,0 +1,13 @@
+body {
+  font-family: arial;
+  text-align: center;
+}
+
+.container {
+  width: 800px;
+  margin: auto;
+}
+
+.productBox img {
+  width: 300px;
+}

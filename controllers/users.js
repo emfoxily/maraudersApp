@@ -1,0 +1,21 @@
+const express = require('express')
+const users = express.Router()
+const User = require('../models/userSchema.js')
+const bcrypt = require('bcrypt')
+
+users.get('/register', (req, res) => {
+  if (req.session.currentUser) {
+    res.send('users/new.ejs')
+  } else {
+    res.redirect('/')
+  }
+})
+
+users.post('/', (req, res) => {
+  req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSalt(10))
+  User.create(req.body, (err, createdUser) => {
+    res.redirect('/')
+  })
+})
+
+module.exports = users
