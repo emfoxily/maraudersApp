@@ -12,9 +12,11 @@ const wizardSeed = require('../models/wizards.js')
 // index
 store.get('/', (req, res) => {
   if (req.session.currentUser) {
-    Wands.find({}, (error, allWand) => {
+    Wands.find({}, (error, allWands) => {
       res.render('index.ejs', {
-        wands: allWands
+        wands: allWands,
+        currentUser: req.session.currentUser,
+        isWizard: req.session.currentUser.isWizard
       })
     })
   } else {
@@ -30,6 +32,11 @@ store.get('/', (req, res) => {
 // Socks.create( sockSeed, (error, data) => {
 //   if (error) console.log(error.message);
 //   console.log('added sock data');
+// })
+//
+// Wands.create( wandSeed, (error, data) => {
+//   if (error) console.log(error.message);
+//   console.log('added wand data');
 // })
 //
 // store.get('/seedWizards', (req, res) => {

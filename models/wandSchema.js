@@ -10,6 +10,7 @@ const wandSchema = Schema({
     required: true
   },
   img: String,
+  length: String,
   price: {
     type: Number,
     min: 0,

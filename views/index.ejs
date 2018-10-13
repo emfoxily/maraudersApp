@@ -10,7 +10,11 @@
   <body>
     <div class = "header">
       <h1>
-        the laughing sock
+        <% if (currentUser) { %>
+          ollivander's wand shop
+        <% } else { %>
+          the laughing sock
+        <% } %>
       </h1>
       <h5>
         quality socks est. 1832
@@ -21,30 +25,39 @@
             register
           </a>
         </li>
+        <% if (currentUser) { %>
           <li>
             <form action="/sessions?_method=DELETE" method="POST">
               <input type="submit" value="Logout"/>
             </form>
           </li>
+        <% } else { %>
         <li>
           <a href="/sessions/new">log in</a>
         </li>
+      <% } %>
       </nav>
     </div>
     <div class = "container">
       <div class = "productContainer">
-        <% for (i = 0; i < socks.length; i++) { %>
-          <div class = "productBox">
-            <a href = "<%= socks[i].id %>">
-              <img src = "<%= socks[i].img %>"/>
-            </a>
-            <h5>
-              "<%= socks[i].name %>"
-            </h5>
-            <li>
-              $<%= socks[i].price %>.00
-            </li>
-          </div>
+        <% if (currentUser) { %>
+          <% for (i = 0; i < wands.length; i++) { %>
+            <img src="<%= wands[i].img %>"/>
+          <% } %>
+        <% } else { %>
+          <% for (i = 0; i < socks.length; i++) { %>
+            <div class = "productBox">
+              <a href = "<%= socks[i].id %>">
+                <img src = "<%= socks[i].img %>"/>
+              </a>
+              <h5>
+                "<%= socks[i].name %>"
+              </h5>
+              <li>
+                $<%= socks[i].price %>.00
+              </li>
+            </div>
+          <% } %>
         <% } %>
     </div>
   </body>

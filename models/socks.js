@@ -1,7 +1,7 @@
 let sockSeed = [
   {
     name: 'Not Again!',
-    img: '../images/sock1.jpg',
+    img: '../images/socks/sock1.jpg',
     price: 25,
     qty: 10,
     inStock: true,
@@ -9,7 +9,7 @@ let sockSeed = [
   },
   {
     name: 'It\'s...Complicated',
-    img: '../images/sock2.jpg',
+    img: '../images/socks/sock2.jpg',
     price: 25,
     qty: 4,
     inStock: true,
@@ -17,7 +17,7 @@ let sockSeed = [
   },
   {
     name: 'I\'m Just Trollin\'!',
-    img: '../images/sock3.jpg',
+    img: '../images/socks/sock3.jpg',
     price: 30,
     qty: 12,
     inStock: true,
@@ -25,7 +25,7 @@ let sockSeed = [
   },
   {
     name: 'I Regret This...',
-    img: '../images/sock4.jpg',
+    img: '../images/socks/sock4.jpg',
     price: 25,
     qty: 0,
     inStock: false,
@@ -33,7 +33,7 @@ let sockSeed = [
   },
   {
     name: 'I\'m A Unicorn!',
-    img: '../images/sock5.jpg',
+    img: '../images/socks/sock5.jpg',
     price: 15,
     qty: 10,
     inStock: true,
@@ -41,7 +41,7 @@ let sockSeed = [
   },
   {
     name: 'Leave Me Alone',
-    img: '../images/sock6.jpg',
+    img: '../images/socks/sock6.jpg',
     price: 15,
     qty: 2,
     inStock: true,
@@ -49,7 +49,7 @@ let sockSeed = [
   },
   {
     name: 'I Don\'t Care',
-    img: '../images/sock7.jpeg',
+    img: '../images/socks/sock7.jpeg',
     price: 15,
     qty: 17,
     inStock: true,
@@ -57,7 +57,7 @@ let sockSeed = [
   },
   {
     name: 'Let\'s Get Weird',
-    img: '../images/sock8.jpg',
+    img: '../images/socks/sock8.jpg',
     price: 20,
     qty: 5,
     inStock: true,
