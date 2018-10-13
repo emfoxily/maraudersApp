@@ -8,6 +8,11 @@ users.get('/register', (req, res) => {
 })
 
 users.post('/', (req, res) => {
+  if (req.body.isWizard === 'on') { // data correction
+    req.body.isWizard = true
+  } else {
+    req.body.isWizard = false
+  }
   req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSalt(10))
   User.create(req.body, (err, createdUser) => {
     res.redirect('/')
