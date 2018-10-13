@@ -4,11 +4,7 @@ const User = require('../models/userSchema.js')
 const bcrypt = require('bcrypt')
 
 users.get('/register', (req, res) => {
-  if (req.session.currentUser) {
-    res.send('users/new.ejs')
-  } else {
-    res.redirect('/')
-  }
+    res.render('users/new.ejs')
 })
 
 users.post('/', (req, res) => {

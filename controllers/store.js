@@ -1,4 +1,5 @@
 const express = require('express')
+const bcrypt = require('bcrypt')
 const store = express.Router()
 const Socks = require('../models/sockSchema.js')
 const sockSeed = require('../models/socks.js')
@@ -8,28 +9,42 @@ const Users = require('../models/userSchema.js')
 const wizardSeed = require('../models/wizards.js')
 
 // routes!
-// index / sock store!
+// index
 store.get('/', (req, res) => {
-  // if (req.sessions.currentUser) {
-  //   Wands.find({}, (error, allWand) => {
-  //     res.render('index.ejs', {
-  //       wands: allWands
-  //     })
-  //   })
-  // } else {
+  if (req.session.currentUser) {
+    Wands.find({}, (error, allWand) => {
+      res.render('index.ejs', {
+        wands: allWands
+      })
+    })
+  } else {
     Socks.find({}, (error, allSocks) => {
       res.render('index.ejs', {
         socks: allSocks,
-        // currentUser: req.sessions.currentUser
+        currentUser: req.session.currentUser
       })
     })
-  // }
+  }
 })
 
 // Socks.create( sockSeed, (error, data) => {
 //   if (error) console.log(error.message);
 //   console.log('added sock data');
 // })
+//
+// store.get('/seedWizards', (req, res) => {
+//   // encrypts passwords
+//   wizardSeed.forEach((user) => {
+//     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10));
+//   });
+//   // seeds the data
+//   Users.create(wizardSeed, (err, createdUsers) => {
+//     // logs created users
+//     console.log(createdUsers);
+//     // redirects
+//     res.redirect('/');
+//   });
+// });
 
 // create!
 store.get('/create', (req, res) => {

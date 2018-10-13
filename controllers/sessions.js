@@ -13,7 +13,7 @@ sessions.post('/', (req, res) => {
       req.session.currentUser = foundUser;
         res.redirect('/')
     } else {
-      res.render('wrongPassword.ejs')
+      res.send('The username or password you entered was incorrect.')
     }
   })
 })
