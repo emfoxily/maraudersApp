@@ -16,29 +16,8 @@
     <% } %>
   </head>
   <body>
-    <div class = "header">
-        <% if (currentUser) { %>
-          <img src = "../images/ollivandersHeader.png"/>
-        <% } else { %>
-          <img src = "../images/laughingsock.png"/>
-        <% } %>
-      <nav>
-        <% if (currentUser) { %>
-          <form action="/sessions?_method=DELETE" method="POST">
-            <input type="submit" value="Logout"/>
-          </form>
-        <% } else { %>
-        <li>
-          <a href="/sessions/new">login</a>
-        </li>
-        <li>
-          <a href="/users/register">
-            register
-          </a>
-        </li>
-      <% } %>
-      </nav>
-    </div>
+    <% include partials/nav.ejs %>
+    <% include partials/header.ejs %>
     <div class = "container">
       <div class = "productContainer">
         <% if (currentUser) { %>
@@ -61,6 +40,16 @@
               <li>
                 $<%= socks[i].price %>.00
               </li>
+              <br/>
+              <% if (socks[i].qty > 0) { %>
+                <li class = "inStock">
+                  IN STOCK
+                </li>
+              <% } else { %>
+                <li class = "outStock">
+                  OUT OF STOCK
+                </li>
+              <% } %>
             </div>
           <% } %>
         <% } %>
