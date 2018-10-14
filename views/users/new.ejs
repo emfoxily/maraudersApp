@@ -3,12 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>REGISTER</title>
+    <link rel="stylesheet" href="../css/index.css">
   </head>
   <body>
+    <% include ../partials/nav.ejs %>
+    <% include ../partials/header.ejs %>
     <form action="/users" method="POST">
       <input type="text" id="username" name="username" placeholder="USERNAME"/> <br/>
       <input type="password" id="password" name="password" placeholder="PASSWORD"/> <br/>
-      <input type="checkbox" id="isWizard" name="isWizard"/> <br/>
+      <li>
+        I AM NOT A MUGGLE:
+      </li>
+      <br/>
+      <input type="checkbox" id="isWizard" name="isWizard" class="checkbox"/> <br/>
       <input type="submit" name ="action" value="REGISTER"/>
     </form>
   </body>
