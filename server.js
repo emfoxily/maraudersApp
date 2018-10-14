@@ -49,14 +49,14 @@ app.use(session({
 }))
 
 // controllers!
-const storeController = require('./controllers/store.js')
-app.use('/', storeController)
-
 const sessionsController = require('./controllers/sessions.js')
 app.use('/sessions', sessionsController)
 
 const userController = require('./controllers/users.js')
 app.use('/users', userController)
+
+const storeController = require('./controllers/store.js')
+app.use('/', storeController)
 
 // listen!
 app.listen(PORT, () => {

@@ -8,7 +8,7 @@ const Socks = require('../models/sockSchema.js')
 const sockSeed = require('../models/socks.js')
 const Wands = require('../models/wandSchema.js')
 const wandSeed = require('../models/wands.js')
-const Users = require('../models/userSchema.js')
+const User = require('../models/userSchema.js')
 const wizardSeed = require('../models/wizards.js')
 
 // routes!
