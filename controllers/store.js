@@ -1,6 +1,9 @@
+// dependencies!
 const express = require('express')
 const bcrypt = require('bcrypt')
 const store = express.Router()
+
+// seeds & schemas!
 const Socks = require('../models/sockSchema.js')
 const sockSeed = require('../models/socks.js')
 const Wands = require('../models/wandSchema.js')
@@ -15,8 +18,7 @@ store.get('/', (req, res) => {
     Wands.find({}, (error, allWands) => {
       res.render('index.ejs', {
         wands: allWands,
-        currentUser: req.session.currentUser,
-        isWizard: req.session.currentUser.isWizard
+        currentUser: req.session.currentUser
       })
     })
   } else {
@@ -44,7 +46,7 @@ store.get('/', (req, res) => {
 //   wizardSeed.forEach((user) => {
 //     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10));
 //   });
-//   // seeds the data
+//   // creates users using the wizard seed
 //   Users.create(wizardSeed, (err, createdUsers) => {
 //     // logs created users
 //     console.log(createdUsers);
@@ -55,47 +57,83 @@ store.get('/', (req, res) => {
 
 // create!
 store.get('/create', (req, res) => {
-  res.render('socks/create.ejs')
+  if (req.session.currentUser) {
+    res.render('wands/create.ejs')
+  } else {
+    res.render('socks/create.ejs')
+  }
 })
 
 store.post('/', (req, res) => {
-  Socks.create(req.body, (error, createdItem) => {
-    res.redirect('/')
-  })
+  if (req.session.currentUser) {
+    Wands.create(req.body, (error, createdWand) => {
+      res.redirect('/')
+    })
+  } else {
+    Socks.create(req.body, (error, createdSock) => {
+      res.redirect('/')
+    })
+  }
 })
 
 // show!
 store.get('/:id', (req, res) => {
-  Socks.findById(req.params.id, (error, foundSock) => {
-    res.render('socks/show.ejs', {
-      sock: foundSock
+  if (req.session.currentUser) {
+    Wands.findById(req.params.id, (error, foundWand) => {
+      res.render('wands/show.ejs', {
+        wand: foundWand
+      })
     })
-  })
+  } else {
+    Socks.findById(req.params.id, (error, foundSock) => {
+      res.render('socks/show.ejs', {
+        sock: foundSock
+      })
+    })
+  }
 })
 
 // delete!
 store.delete('/:id', (req, res) => {
-  Socks.findByIdAndRemove(req.params.id, (error, data)=> {
-    res.redirect('/')
-  })
+  if (req.session.currentUser) {
+    Wands.findByIdAndRemove(req.params.id, (error, data) => {
+      res.redirect('/')
+    })
+  } else {
+    Socks.findByIdAndRemove(req.params.id, (error, data)=> {
+      res.redirect('/')
+    })
+  }
 })
 
 // edit!
 store.get('/:id/edit', (req, res) => {
-  Socks.findById(req.params.id, (error, foundSock) => {
-    res.render(
-      'socks/update.ejs',
-      {
-        sock: foundSock
-      }
-    )
-  })
+  if (req.session.currentUser) {
+    Wands.findById(req.params.id, (error, foundWand) => {
+      res.render('wands/update.ejs', {
+        wand: foundWand
+      })
+    })
+  } else {
+    Socks.findById(req.params.id, (error, foundSock) => {
+      res.render('socks/update.ejs', {
+          sock: foundSock
+        }
+      )
+    })
+  }
 })
 
 store.put('/:id', (req, res) => {
-  Socks.findByIdAndUpdate(req.params.id, req.body, { new: true }, (error, updated) => {
-    res.redirect('/')
-  })
+  if (req.session.currentUser) {
+    Wands.findByIdAndUpdate(req.params.id, req.body, { new: true }, (error, updated) => {
+      res.redirect('/')
+    })
+  } else {
+    Socks.findByIdAndUpdate(req.params.id, req.body, { new: true }, (error, updated) => {
+      res.redirect('/')
+    })
+  }
 })
 
 module.exports = store

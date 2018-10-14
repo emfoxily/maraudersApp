@@ -20,6 +20,8 @@ sessions.post('/', (req, res) => {
 
 sessions.delete('/', (req, res) => {
   req.session.destroy(() => {
+    // console.log('it works!'); // this isn't working for some reason...
+    // res.clearCookie('index.ejs');
     res.redirect('/')
   })
 })
