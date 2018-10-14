@@ -1,0 +1,57 @@
+body {
+  font-family: georgia;
+  background: rgb(10, 13, 16);
+}
+
+.header {
+  margin: -10px;
+}
+
+.header img {
+  width: 100%;
+}
+
+.container {
+  width: 800px;
+  margin: auto;
+}
+
+.productContainer {
+  background-color: rgb(27, 19, 18);
+  margin: auto;
+  width: 675px;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap-reverse;
+  border: 10px solid rgb(38, 26, 23);
+  padding-top: 10px;
+  z-index: -4;
+}
+
+.productBox {
+  display: inline-flex;
+  text-align: center;
+  max-width: 225px;
+  max-height: 225px;
+  z-index: 2;
+}
+
+.productBox img {
+  width: 225px;
+  z-index: -1;
+}
+
+/* .productBox img:hover {
+  animation: pull 2000ms ease-in forwards;
+  z-index: 5;
+} */
+
+.productBox li {
+  list-style: none;
+  font-size: 14px;
+}
+
+/* @keyframes pull {
+  50% {width: 150%};
+  /* 50% {transform: scale(5.0)} */
+} */
