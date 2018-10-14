@@ -3,37 +3,43 @@
   <head>
     <meta charset="utf-8">
     <title>
-      THE LAUGHING SOCK
+      <% if (currentUser) { %>
+        OLLIVANDER'S WAND SHOP
+      <% } else { %>
+        THE LAUGHING SOCK
+      <% } %>
     </title>
-    <link rel="stylesheet" href="../css/index.css">
+    <% if (currentUser) { %>
+      <link rel="stylesheet" href="../css/ollivanders.css">
+    <% } else { %>
+      <link rel="stylesheet" href="../css/index.css">
+    <% } %>
   </head>
   <body>
     <div class = "header">
-      <h1>
         <% if (currentUser) { %>
-          ollivander's wand shop
+          <img src = "../images/ollivandersHeader.png"/>
         <% } else { %>
-          the laughing sock
+          <h1>
+            the laughing sock
+          </h1>
+          <h5>
+            quality socks est. 1832
+          </h5>
         <% } %>
-      </h1>
-      <h5>
-        quality socks est. 1832
-      </h5>
       <nav>
+        <% if (currentUser) { %>
+          <form action="/sessions?_method=DELETE" method="POST">
+            <input type="submit" value="Logout"/>
+          </form>
+        <% } else { %>
+        <li>
+          <a href="/sessions/new">log in</a>
+        </li>
         <li>
           <a href="/users/register">
             register
           </a>
-        </li>
-        <% if (currentUser) { %>
-          <li>
-            <form action="/sessions?_method=DELETE" method="POST">
-              <input type="submit" value="Logout"/>
-            </form>
-          </li>
-        <% } else { %>
-        <li>
-          <a href="/sessions/new">log in</a>
         </li>
       <% } %>
       </nav>
@@ -42,7 +48,11 @@
       <div class = "productContainer">
         <% if (currentUser) { %>
           <% for (i = 0; i < wands.length; i++) { %>
-            <img src="<%= wands[i].img %>"/>
+            <div class = "productBox">
+              <a href="<%= wands[i].id %>">
+                <img src="<%= wands[i].img %>"/>
+              </a>
+            </div>
           <% } %>
         <% } else { %>
           <% for (i = 0; i < socks.length; i++) { %>
