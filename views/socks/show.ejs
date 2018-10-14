@@ -6,31 +6,34 @@
     <link rel="stylesheet" href="css/show.css">
   </head>
   <body>
-    <header>
-      <a href="/">
-        <h1>
-          THE LAUGHING SOCK
-        </h1>
-      </a>
-    </header>
+    <% include ../partials/nav.ejs %>
+    <% include ../partials/header.ejs %>
     <div class = "container">
       <div class = "productBox">
-        <h2><%= sock.name %></h2>
+        <h2>"<%= sock.name %>"</h2>
         <img src = "<%= sock.img %>"/>
         <p>
-          <%= sock.description %>
+          "<%= sock.description %>"
         </p>
         <li>
-          QUANTITY: <%= sock.qty %>
+          Only <strong><%= sock.qty %></strong> left in stock!
         </li>
-        <a href = "<%= sock.id %>/edit">
+        <!-- <a href = "<%= sock.id %>/edit">
           <button>
             EDIT
           </button>
         </a>
         <form action="/<%= sock.id %>?_method=DELETE" method="POST">
           <input type="submit" value="REMOVE">
+        </form> -->
+
+        <!-- add an add to cart button that pushes to a cart array??? -->
+        <form action="/<%= sock.id %>/cart?_method=PUT" method="POST">
+          <input type="submit" value="ADD TO CART"/>
         </form>
+      </div>
+      <div class = "reviews">
+
       </div>
     </div>
   </body>
