@@ -1,10 +1,30 @@
 body {
+  background-image: url('../images/linen.png');
   font-family: arial;
 }
 
 h1, h5 {
   text-transform: uppercase;
   text-align: center;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+nav {
+  width: 100%;
+  text-align: center;
+  margin-top: -75px;
+}
+
+.header {
+  margin: -10px;
+}
+
+.header img {
+  width: 100%;
 }
 
 .container {
@@ -14,14 +34,16 @@ h1, h5 {
 
 .productContainer {
   margin: auto;
-  width: 400px;
+  width: 800px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  margin-top: 50px;
 }
 
 .productBox {
   text-align: center;
+  padding: 2%;
 }
 
 .productBox img {
