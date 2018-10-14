@@ -31,6 +31,25 @@ nav a {
   border-radius: 10px;
 }
 
+form {
+  margin: auto;
+  text-align: center;
+}
+
+input {
+  background: black;
+  color: white;
+  padding: 20px;
+  width: 500px;
+  border-radius: 10px;
+  border: 1px solid black;
+  outline: none;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 .header {
   margin: -10px;
 }
