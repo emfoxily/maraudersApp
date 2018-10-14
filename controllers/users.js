@@ -4,7 +4,9 @@ const User = require('../models/userSchema.js')
 const bcrypt = require('bcrypt')
 
 users.get('/register', (req, res) => {
-    res.render('users/new.ejs')
+    res.render('users/new.ejs', {
+      currentUser: req.session.currentUser
+    })
 })
 
 users.post('/', (req, res) => {

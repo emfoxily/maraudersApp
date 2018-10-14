@@ -4,7 +4,9 @@ const User = require('../models/userSchema.js')
 const bcrypt = require('bcrypt')
 
 sessions.get('/new', (req, res) => {
-  res.render('sessions/new.ejs')
+  res.render('sessions/new.ejs', {
+    currentUser: req.session.currentUser
+  })
 })
 
 sessions.post('/', (req, res) => {
@@ -20,8 +22,6 @@ sessions.post('/', (req, res) => {
 
 sessions.delete('/', (req, res) => {
   req.session.destroy(() => {
-    // console.log('it works!'); // this isn't working for some reason...
-    // res.clearCookie('index.ejs');
     res.redirect('/')
   })
 })
