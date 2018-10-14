@@ -15,9 +15,11 @@ const wizardSeed = require('../models/wizards.js')
 // index
 store.get('/', (req, res) => {
   if (req.session.currentUser) {
+    // console.log(req.session.currentUser);
     Wands.find({}, (error, allWands) => {
       res.render('index.ejs', {
         wands: allWands,
+        // session: req.session,
         currentUser: req.session.currentUser
       })
     })
@@ -25,6 +27,7 @@ store.get('/', (req, res) => {
     Socks.find({}, (error, allSocks) => {
       res.render('index.ejs', {
         socks: allSocks,
+        // session: req.session,
         currentUser: req.session.currentUser
       })
     })
@@ -81,13 +84,15 @@ store.get('/:id', (req, res) => {
   if (req.session.currentUser) {
     Wands.findById(req.params.id, (error, foundWand) => {
       res.render('wands/show.ejs', {
-        wand: foundWand
+        wand: foundWand,
+        currentUser: req.session.currentUser
       })
     })
   } else {
     Socks.findById(req.params.id, (error, foundSock) => {
       res.render('socks/show.ejs', {
-        sock: foundSock
+        sock: foundSock,
+        currentUser: req.session.currentUser
       })
     })
   }
@@ -134,6 +139,13 @@ store.put('/:id', (req, res) => {
       res.redirect('/')
     })
   }
+})
+
+store.put('/:id/cart', (req, res) => {
+  let cart = []
+  Socks.findByIdAndUpdate(req.params.id, {$inc: {qty: -1}}, (error, qty) => {
+    res.redirect('/')
+  })
 })
 
 module.exports = store
