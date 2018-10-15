@@ -45,8 +45,12 @@ app.use(methodOverride('_method'))
 app.use(session({
   secret: "mischiefmanaged",
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
 }))
+
+// app.use((req, res) => {
+//   res.locals.session = req.session
+// })
 
 // controllers!
 const sessionsController = require('./controllers/sessions.js')
