@@ -10,6 +10,7 @@ const wandSchema = Schema({
     required: true
   },
   img: String,
+  wand: String,
   core: String,
   length: String,
   price: {

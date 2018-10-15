@@ -2,6 +2,7 @@ const wandSeed = [
   {
     name: 'Alder Wand',
     img: '../images/wands/alderWand.png',
+    wand: '../images/wands/alder.png',
     core: 'Unicorn Hair Core',
     length: '12 inches',
     price: 300,
@@ -12,6 +13,7 @@ const wandSeed = [
   {
     name: 'Dogwood Wand',
     img: '../images/wands/dogwoodWand.png',
+    wand: '../images/wands/dogwood.png',
     core: 'Phoenix Feather Core',
     length: '13 ½ inches',
     price: 200,
@@ -22,6 +24,7 @@ const wandSeed = [
   {
     name: 'Holly Wand',
     img: '../images/wands/hollyWand.png',
+    wand: '../images/wands/holly.png',
     core: 'Dragon Heartstring Core',
     length: '10 inches',
     price: 700,
@@ -32,6 +35,7 @@ const wandSeed = [
   {
     name: 'Laurel Wand',
     img: '../images/wands/laurelWand.png',
+    wand: '../images/wands/laurel.png',
     core: 'Unicorn Hair Core',
     length: '12 inches',
     price: 400,
@@ -42,6 +46,7 @@ const wandSeed = [
   {
     name: 'Elder Wand',
     img: '../images/wands/elderWand.png',
+    wand: '../images/wands/elder.png',
     core: 'Phoenix Feather Core',
     length: '14 inches',
     price: 1000,
@@ -52,6 +57,7 @@ const wandSeed = [
   {
     name: 'Sycamore Wand',
     img: '../images/wands/sycamoreWand.png',
+    wand: '../images/wands/sycamore.png',
     core: 'Dragon Heartstring Core',
     length: '9 ½ inches',
     price: 800,
@@ -62,6 +68,7 @@ const wandSeed = [
   {
     name: 'Poplar Wand',
     img: '../images/wands/poplarWand.png',
+    wand: '../images/wands/poplar.png',
     core: 'Unicorn Hair Core',
     length: '11 inches',
     price: 600,
@@ -72,6 +79,7 @@ const wandSeed = [
   {
     name: 'Rowan Wand',
     img: '../images/wands/rowanWand.png',
+    wand: '../images/wands/rowan.png',
     core: 'Phoenix Feather Core',
     length: '10 ½ inches',
     price: 800,
