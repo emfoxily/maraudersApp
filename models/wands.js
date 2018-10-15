@@ -72,7 +72,7 @@ const wandSeed = [
     core: 'Unicorn Hair Core',
     length: '11 inches',
     price: 600,
-    description: '‘If you seek integrity, search first among the poplars,’ was a great maxim of my grandfather, Gerbold Ollivander, and my own experience of poplar wands and their owners tallies exactly with his. Here is a wand to rely upon, of consistency, strength and uniform power, always happiest when working with a witch or wizard of clear moral vision. There is a tired old joke among lesser wandmakers that no poplar wand has ever chosen a politician, but here they show their lamentable ignorance: two of the Ministry’s most accomplished Ministers for Magic, Eldritch Diggory and Evangeline Orpington, were the possessors of fine, Ollivander-made poplar wands.',
+    description: 'If you seek integrity, search first among the poplars,’ was a great maxim of my grandfather, Gerbold Ollivander, and my own experience of poplar wands and their owners tallies exactly with his. Here is a wand to rely upon, of consistency, strength and uniform power, always happiest when working with a witch or wizard of clear moral vision. There is a tired old joke among lesser wandmakers that no poplar wand has ever chosen a politician, but here they show their lamentable ignorance: two of the Ministry’s most accomplished Ministers for Magic, Eldritch Diggory and Evangeline Orpington, were the possessors of fine, Ollivander-made poplar wands.',
     qty: 7,
     inStock: true
   },
