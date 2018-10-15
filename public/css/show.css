@@ -75,10 +75,43 @@ input:hover {
   margin: auto;
 }
 
+.productBox {
+  padding-bottom: 100px;
+}
+
 .productBox img {
   width: 300px;
 }
 
 .productBox li {
   padding-bottom: 20px;
+}
+
+.reviews {
+  width: 400px;
+  margin: auto;
+}
+
+.review {
+  width: 400px;
+  text-align: left;
+  border: 1px solid black;
+  padding: 2%;
+}
+
+.review h5 {
+  background: black;
+  width: 100.3%;
+  margin-left: -8px;
+  margin-top: -25px;
+  padding: 2%;
+  color: white;
+}
+
+.review h6 {
+  border-bottom: 1px solid black;
+}
+
+.review p {
+  margin-top: -50px;
 }

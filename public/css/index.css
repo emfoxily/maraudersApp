@@ -135,12 +135,7 @@ input:hover {
   font-size: 14px;
 }
 
-.inStock {
+.inStock, .outStock {
   font-weight: 600;
-  color: rgb(23, 134, 71);
-}
-
-.outStock {
-  font-weight: 600;
-  color: rgb(148, 39, 39);
+  margin-left: -5px;
 }
