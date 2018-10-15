@@ -3,8 +3,12 @@ body {
   background-image: url('../images/zwartevilt.png');
 }
 
+a {
+  font-size: 12px;
+}
+
 nav {
-  position: absolute;
+  position: fixed;
   margin: auto;
   width: 100%;
   padding: 10px;
@@ -13,6 +17,7 @@ nav {
   font-family: georgia;
   font-size: 15px;
   text-transform: uppercase;
+  z-index: 2;
 }
 
 nav a {
@@ -51,7 +56,29 @@ input:hover {
   transition: 1s;
 }
 
+.wandBox button, input {
+  background: rgb(14, 11, 11);
+  color: rgb(244, 244, 244);
+  padding: 8px;
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+  font-family: georgia;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(244, 244, 244);
+  color: black;
+  transition: 1s;
+}
+
 .header {
+  margin-top: 20px;
   margin: -10px;
 }
 
@@ -69,7 +96,7 @@ input:hover {
   margin: auto;
   width: 675px;
   height: 100%;
-  padding-top: 100px;
+  padding-top: 200px;
   display: flex;
   flex-flow: row wrap-reverse;
   border: 20px solid rgb(14, 11, 11);
@@ -77,8 +104,9 @@ input:hover {
 
 .productBox {
   text-align: center;
-  max-width: 225px;
+  max-width: 400px;
   max-height: 225px;
+  color: rgb(244, 244, 244);
 }
 
 .productBox img {
@@ -90,7 +118,65 @@ input:hover {
   font-size: 14px;
 }
 
+.wandContainer {
+  background-image: url('../images/wandDisplay.png');
+  width: 400px;
+  margin: auto;
+  margin-top: -50px;
+  padding: 50px;
+  border: 20px solid rgb(14, 11, 11);
+  list-style: none;
+}
+
+.wandContainer form {
+  text-align: center;
+}
+
+.wandContainer button {
+  width: 380px;
+  padding: 20px;
+}
+
+.wandContainer input {
+  width: 380px;
+  padding: 20px;
+}
+
+.wandContainer input:hover, button:hover {
+  background: rgb(14, 11, 11);
+  color: white;
+}
+
+.wandBox {
+  font-size: 12.5px;
+  text-align: center;
+  max-width: 400px;
+  color: rgb(244, 244, 244);
+}
+
+.wandBox img {
+  width: 225px;
+  animation: float;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.wandBox li {
+  list-style: none;
+  font-size: 14px;
+}
+
+.wandBox p {
+  background: rgb(14, 11, 11);
+  padding: 15px;
+}
+
+.wandBox button, input {
+  display: inline-block;
+  font-size: 12px;
+}
+
 @keyframes float {
-  50% {width: 150%};
-  50
+  50% {transform: translateY(20px)};
+  50% {transform: translateY(-20px)};
 }

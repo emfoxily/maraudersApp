@@ -6,5 +6,40 @@
   <body>
     <% include ../partials/nav.ejs %>
     <% include ../partials/header.ejs %>
+    <div class = "wandContainer">
+      <div class = "wandBox">
+        <img src = "<%= wand.wand %>"/>
+        <h2><%= wand.name %></h2>
+        <h4>$<%= wand.price %>.00</h4>
+        <p>
+          "<%= wand.description %>"
+        </p>
+        <% if (wand.qty > 0) { %>
+          <li>
+            Only <strong><%= wand.qty %></strong> left in stock!
+          </li>
+        <% } else { %>
+          <li>
+            <strong>
+              OUT OF STOCK
+            </strong>
+          </li>
+        <% } %>
+        <br/>
+        <% if (currentUser.username == 'emfoxily') { %>
+        <a href = "<%= wand.id %>/edit">
+          <button>
+            EDIT
+          </button>
+        </a>
+        <form action="/<%= wand.id %>?_method=DELETE" method="POST">
+          <input type="submit" value="REMOVE">
+        </form>
+        <% } %>
+
+        <form action="/<%= wand.id %>/cart?_method=PUT" method="POST">
+          <input type="submit" value="ADD TO CART"/>
+        </form>
+      </div>
   </body>
 </html>

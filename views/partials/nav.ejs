@@ -3,6 +3,11 @@
     <form action="/sessions?_method=DELETE" method="POST">
       <input type="submit" value="Logout"/>
     </form>
+    <% if (currentUser.username == 'emfoxily') { %>
+    <a href="/create">
+      ADD NEW WAND
+    </a>
+    <% } %>
   <% } else { %>
   <li>
     <a href="/users/register">
