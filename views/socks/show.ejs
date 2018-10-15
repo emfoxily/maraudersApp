@@ -15,17 +15,27 @@
         <p>
           "<%= sock.description %>"
         </p>
-        <li>
-          Only <strong><%= sock.qty %></strong> left in stock!
-        </li>
-        <!-- <a href = "<%= sock.id %>/edit">
+        <% if (sock.qty > 0) { %>
+          <li>
+            Only <strong><%= sock.qty %></strong> left in stock!
+          </li>
+        <% } else { %>
+          <li>
+            <strong>
+              OUT OF STOCK
+            </strong>
+          </li>
+        <% } %>
+        <% if (currentUser) { %>
+        <a href = "<%= sock.id %>/edit">
           <button>
             EDIT
           </button>
         </a>
         <form action="/<%= sock.id %>?_method=DELETE" method="POST">
           <input type="submit" value="REMOVE">
-        </form> -->
+        </form>
+        <% } %>
 
         <!-- add an add to cart button that pushes to a cart array??? -->
         <form action="/<%= sock.id %>/cart?_method=PUT" method="POST">
