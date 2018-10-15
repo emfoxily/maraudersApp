@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>EDIT - <%= wand.name %></title>
+    <link rel="stylesheet" href="../css/ollivanders.css">
+  </head>
+  <body>
+    <div class = "header">
+      <a href="/">
+        <img src = "../images/ollivandersHeader.png"/>
+      </a>
+    </div>
+    <div class = "wandContainer">
+      <form action="/<%= wand.id %>?_method=PUT" method="POST">
+        <li>
+          <input type="text" name="name" value="<%= wand.name %>" placeholder="NAME"/>
+        </li>
+        <li>
+          <input type="text" name="img" value="<%= wand.wand %>" placeholder="IMAGE URL"/>
+        </li>
+        <li>
+          <input type="textarea" name="description" value="<%= wand.description %>" placeholder="DESCRIPTION"/>
+        </li>
+        <li>
+          <input type="number" name="price" value="<%= wand.price %>" placeholder="PRICE"/>
+        </li>
+        <li>
+          <input type="number" name="qty" value="<%= wand.qty %>" placeholder="QUANTITY"/>
+        </li>
+        <input type="submit" value="SUBMIT CHANGES">
+      </form>
+    </div>
+  </body>
+</html>
