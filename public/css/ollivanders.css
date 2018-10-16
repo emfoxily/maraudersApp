@@ -1,3 +1,4 @@
+/*============== GENERAL ==============*/
 body {
   font-family: georgia;
   background-image: url('../images/zwartevilt.png');
@@ -7,8 +8,9 @@ a {
   font-size: 12px;
 }
 
+/*============== NAVIGATION ==============*/
 nav {
-  position: fixed;
+  position: absolute;
   margin: auto;
   width: 100%;
   padding: 10px;
@@ -35,6 +37,13 @@ nav a:hover {
   transition: 1s;
 }
 
+/*============== BUTTONS & INPUTS ==============*/
+button:hover {
+  background: rgb(244, 244, 244);
+  color: black;
+  transition: 1s;
+}
+
 input {
   background: black;
   color: rgb(244, 244, 244);
@@ -56,27 +65,7 @@ input:hover {
   transition: 1s;
 }
 
-.wandBox button, input {
-  background: rgb(14, 11, 11);
-  color: rgb(244, 244, 244);
-  padding: 8px;
-  width: 100px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  margin-bottom: 10px;
-  font-family: georgia;
-  font-size: 15px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-button:hover {
-  background: rgb(244, 244, 244);
-  color: black;
-  transition: 1s;
-}
-
+/*============== HEADER ==============*/
 .header {
   margin-top: 20px;
   margin: -10px;
@@ -86,6 +75,7 @@ button:hover {
   width: 100%;
 }
 
+/*============== WAND INDEX PAGE ==============*/
 .container {
   width: 800px;
   margin: auto;
@@ -118,6 +108,7 @@ button:hover {
   font-size: 14px;
 }
 
+/*============== WAND SHOW PAGE ==============*/
 .wandContainer {
   background-image: url('../images/wandDisplay.png');
   width: 400px;
@@ -172,10 +163,21 @@ button:hover {
 }
 
 .wandBox button, input {
-  display: inline-block;
+  background: rgb(14, 11, 11);
+  color: rgb(244, 244, 244);
+  padding: 8px;
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+  font-family: georgia;
   font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
+/*============== FLOAT ANIMATION ==============*/
 @keyframes float {
   50% {transform: translateY(20px)};
   50% {transform: translateY(-20px)};

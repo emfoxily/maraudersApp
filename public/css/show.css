@@ -1,5 +1,7 @@
+/*============== FONT ==============*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+/*============== GENERAL ==============*/
 body {
   background-image: url('../images/linen.png');
   font-family: 'Montserrat', sans-serif;
@@ -21,6 +23,7 @@ p {
   padding: 40px 0;
 }
 
+/*============== NAVIGATION ==============*/
 nav {
   position: fixed;
   background: black;
@@ -46,6 +49,8 @@ nav a:hover {
   transition: 1s;
 }
 
+/*============== BUTTONS & INPUTS ==============*/
+
 input {
   background: black;
   color: rgb(244, 244, 244);
@@ -62,6 +67,8 @@ input:hover {
   transition: 1s;
 }
 
+/*============== HEADER ==============*/
+
 .header {
   margin: -10px;
 }
@@ -69,6 +76,8 @@ input:hover {
 .header img {
   width: 100%;
 }
+
+/*============== SOCKS SHOW PAGE ==============*/
 
 .container {
   width: 800px;
@@ -87,6 +96,7 @@ input:hover {
   padding-bottom: 20px;
 }
 
+/*============== REVIEWS ==============*/
 .reviews {
   width: 400px;
   margin: auto;

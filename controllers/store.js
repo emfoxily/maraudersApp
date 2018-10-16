@@ -1,9 +1,9 @@
-// dependencies!
+//================= DEPENDENCIES =================//
 const express = require('express')
 const bcrypt = require('bcrypt')
 const store = express.Router()
 
-// seeds & schemas!
+//================= SEED & SCHEMA VARIABLES =================//
 const Socks = require('../models/sockSchema.js')
 const sockSeed = require('../models/socks.js')
 const Wands = require('../models/wandSchema.js')
@@ -11,8 +11,8 @@ const wandSeed = require('../models/wands.js')
 const User = require('../models/userSchema.js')
 const wizardSeed = require('../models/wizards.js')
 
-// routes!
-// index
+//================= ROUTES =================//
+//================= INDEX =================//
 store.get('/', (req, res) => {
   if (req.session.currentUser) {
     console.log(req.session.currentUser);
@@ -34,6 +34,7 @@ store.get('/', (req, res) => {
   }
 })
 
+//================= SEEDS =================//
 // Socks.create( sockSeed, (error, data) => {
 //   if (error) console.log(error.message);
 //   console.log('added sock data');
@@ -58,7 +59,7 @@ store.get('/', (req, res) => {
 //   });
 // });
 
-// create!
+//================= CREATE =================//
 store.get('/create', (req, res) => {
   if (req.session.currentUser) {
     res.render('wands/create.ejs', {
@@ -81,7 +82,7 @@ store.post('/', (req, res) => {
   }
 })
 
-// show!
+//================= SHOW =================//
 store.get('/:id', (req, res) => {
   if (req.session.currentUser) {
     Wands.findById(req.params.id, (error, foundWand) => {
@@ -100,7 +101,7 @@ store.get('/:id', (req, res) => {
   }
 })
 
-// delete!
+//================= DELETE =================//
 store.delete('/:id', (req, res) => {
   if (req.session.currentUser) {
     Wands.findByIdAndRemove(req.params.id, (error, data) => {
@@ -113,7 +114,7 @@ store.delete('/:id', (req, res) => {
   }
 })
 
-// edit!
+//================= EDIT =================//
 store.get('/:id/edit', (req, res) => {
   if (req.session.currentUser) {
     Wands.findById(req.params.id, (error, foundWand) => {
@@ -143,6 +144,7 @@ store.put('/:id', (req, res) => {
   }
 })
 
+//================= ADD TO CART (WIP) =================//
 store.put('/:id/cart', (req, res) => {
   let cart = []
   if (req.session.currentUser) {

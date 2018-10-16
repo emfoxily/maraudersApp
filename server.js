@@ -1,4 +1,4 @@
-// dependencies!
+//================= DEPENDENCIES =================//
 const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
@@ -7,30 +7,30 @@ const db = mongoose.connection;
 const session = require('express-session')
 const bcrypt = require('bcrypt')
 
-// port!
+//================= PORT =================//
 const PORT = process.env.PORT || 3000
 
-// database!
+//================= DATABASE =================//
 const MONGODB_URI = 'mongodb://heroku_2wm3xvfz:h9vpt2cja5mrs56ud0s52e5jgj@ds227853.mlab.com:27853/heroku_2wm3xvfz' || process.env.MONGODB_URI || 'mongodb://localhost/' + 'maraudersApp'
-
+//================= HEROKU =================//
 const uri = 'mongodb://emfoxily:thG482n7dp6dvMD@ds227853.mlab.com:27853/heroku_2wm3xvfz'
 
+//================= CONNECT TO MONGO & HEROKU =================//
 mongoose.connect(uri, { useNewUrlParser: true })
 
-// connect to mongo!
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 
-// error / success!
+//================= ERROR / SUCCESS =================//
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
-// open the connection to mongo!
+//================= OPEN =================//
 db.on('open', () => {
   console.log('Mischief Managed.');
 })
 
-// middleware!
+//================= MIDDLEWARE =================//
 // use public folder for static assets
 app.use(express.static('public'))
 
@@ -52,7 +52,7 @@ app.use(session({
 //   res.locals.session = req.session
 // })
 
-// controllers!
+//================= CONTROLLERS =================//
 const sessionsController = require('./controllers/sessions.js')
 app.use('/sessions', sessionsController)
 
@@ -62,7 +62,7 @@ app.use('/users', userController)
 const storeController = require('./controllers/store.js')
 app.use('/', storeController)
 
-// listen!
+//================= LISTEN =================//
 app.listen(PORT, () => {
   console.log('I solemnly swear that I am up to no good...');
 })
