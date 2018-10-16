@@ -1,4 +1,4 @@
-![Image of MaraudersApp](https://imgur.com/a/fXnNMWE)
+![Image of MaraudersApp](/public/images/maraudersapp.png)
 ### [Link to App](https://maraudersapp.herokuapp.com/)
 
 ## About The App
