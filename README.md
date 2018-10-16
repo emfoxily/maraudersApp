@@ -1,4 +1,4 @@
-![Image of MaraudersApp](public/images/maraudersapp.png?raw=true)
+![Image of MaraudersApp](../images/maraudersapp.png?raw=true)
 ### [Link to App](https://maraudersapp.herokuapp.com/)
 
 ## About The App
