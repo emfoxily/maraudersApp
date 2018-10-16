@@ -16,6 +16,9 @@ I also plan to redesign the register screen upon solving the authorization flow 
 
 ## Credits
 [Pottermore](https://www.pottermore.com/) for the wand descriptions
+
 [Flaticon](https://www.flaticon.com/) for the sock and shopping cart pngs
+
 [InsertHTML](https://www.inserthtml.com/2012/06/custom-form-radio-checkbox/) for how to edit a checkbox
+
 The Kingsman assignment for help with authorization flow and seeding premade users
