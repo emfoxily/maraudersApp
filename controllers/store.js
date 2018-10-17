@@ -15,16 +15,24 @@ const wizardSeed = require('../models/wizards.js')
 //================= INDEX =================//
 store.get('/', (req, res) => {
   if (req.session.currentUser) {
-    console.log(req.session.currentUser);
-    console.log('the user is a wizard!');
-      Wands.find({}, (error, allWands) => {
-        res.render('index.ejs', {
-          wands: allWands,
-          currentUser: req.session.currentUser
-        })
-      })
+      if (req.session.currentUser.isWizard == true) {
+          console.log('the user is a wizard!')
+          Wands.find({}, (error, allWands) => {
+            res.render('wands/index.ejs', {
+              wands: allWands,
+              currentUser: req.session.currentUser
+            })
+          })
+      } else {
+          console.log ('the user is a muggle or not registered!')
+          Socks.find({}, (error, allSocks) => {
+            res.render('socks/index.ejs', {
+              socks: allSocks,
+              currentUser: req.session.currentUser
+            })
+          })
+      }
   } else {
-    console.log('the user is a muggle!');
     Socks.find({}, (error, allSocks) => {
       res.render('index.ejs', {
         socks: allSocks,
@@ -85,12 +93,21 @@ store.post('/', (req, res) => {
 //================= SHOW =================//
 store.get('/:id', (req, res) => {
   if (req.session.currentUser) {
-    Wands.findById(req.params.id, (error, foundWand) => {
-      res.render('wands/show.ejs', {
-        wand: foundWand,
-        currentUser: req.session.currentUser
+    if (req.session.currentUser.isWizard == true) {
+      Wands.findById(req.params.id, (error, foundWand) => {
+        res.render('wands/show.ejs', {
+          wand: foundWand,
+          currentUser: req.session.currentUser
+        })
       })
-    })
+    } else {
+      Socks.findById(req.params.id, (error, foundSock) => {
+        res.render('socks/show.ejs', {
+          sock: foundSock,
+          currentUser: req.session.currentUser
+        })
+      })
+    }
   } else {
     Socks.findById(req.params.id, (error, foundSock) => {
       res.render('socks/show.ejs', {

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    OLLIVANDER'S WAND SHOP
+  </title>
+  <link rel="stylesheet" href="../css/ollivanders.css">
+</head>
+
+<body>
+  <% include ../partials/nav.ejs %>
+  <% include ../partials/header.ejs %>
+  <div class="container">
+    <div class="productContainer">
+      <% for (i = 0; i < wands.length; i++) { %>
+      <div class="productBox">
+        <a href="<%= wands[i].id %>">
+          <img src="<%= wands[i].img %>" />
+        </a>
+      </div>
+      <% } %>
+    </div>
+</body>
+
+</html>

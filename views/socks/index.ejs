@@ -5,11 +5,37 @@
     <title>
         THE LAUGHING SOCK
     </title>
-      <link rel="stylesheet" href="../css/index.css">
+      <link rel="stylesheet" href="../css/socks.css">
   </head>
   <body>
-    <% include partials/nav.ejs %>
-    <% include partials/header.ejs %>
+    <nav>
+      <% if (currentUser) { %>
+        <form action="/sessions?_method=DELETE" method="POST">
+          <input type="submit" value="Logout"/>
+          <img src="../images/shopping-cart.png"/>
+        </form>
+        <% if (currentUser.username == 'emfoxily') { %>
+        <a href="/create">
+          ADD NEW WAND
+        </a>
+        <% } %>
+      <% } else { %>
+      <li>
+        <a href="/users/register">
+          register
+        </a>
+        <a href="/sessions/new">
+          login
+        </a>
+      </li>
+    <% } %>
+    </nav>
+
+    <div class = "header">
+      <a href="/">
+        <img src = "../images/laughingsock.png"/>
+      </a>
+    </div>
     <div class = "container">
       <div class = "productContainer">
           <% for (i = 0; i < socks.length; i++) { %>

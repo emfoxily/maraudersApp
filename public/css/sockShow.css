@@ -1,0 +1,151 @@
+/*============== FONT ==============*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/*============== GENERAL ==============*/
+body {
+  background-image: url('../images/linen.png');
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+li img {
+  width: 25px;
+}
+
+p {
+  width: 400px;
+  margin: auto;
+  font-size: 14px;
+  padding: 40px 0;
+}
+
+/*============== NAVIGATION ==============*/
+nav {
+  position: fixed;
+  background: black;
+  width: 100%;
+  height: 4%;
+  padding: 10px;
+  left: 0%;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav a {
+  background: black;
+  color: rgb(244, 244, 244);
+  padding: 10px;
+  text-decoration: none;
+  /* border-radius: 10px; */
+}
+
+nav a:hover {
+  background: rgb(244, 244, 244);
+  color: black;
+  transition: 1s;
+}
+
+nav img {
+  position: relative;
+  width: 25px;
+}
+
+nav form {
+  text-align: left;
+}
+
+nav input {
+  font-size: 14px;
+}
+
+/*============== BUTTONS & INPUTS ==============*/
+
+form {
+  margin: auto;
+  text-align: center;
+}
+
+input {
+  background: black;
+  display: inline-block;
+  color: rgb(244, 244, 244);
+  padding: 10px;
+  width: 100px;
+  border-radius: 10px;
+  border: 1px solid black;
+  outline: none;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+input:hover {
+  background: rgb(244, 244, 244);
+  color: black;
+  transition: 1s;
+}
+
+/*============== HEADER ==============*/
+
+.header {
+  margin: -10px;
+}
+
+.header img {
+  width: 100%;
+}
+
+/*============== SOCKS SHOW PAGE ==============*/
+
+.container {
+  width: 800px;
+  margin: auto;
+}
+
+.productBox {
+  padding-bottom: 100px;
+}
+
+.productBox img {
+  width: 300px;
+}
+
+.productBox li {
+  padding-bottom: 20px;
+}
+
+/*============== REVIEWS ==============*/
+.reviews {
+  width: 400px;
+  margin: auto;
+}
+
+.review {
+  width: 400px;
+  text-align: left;
+  border: 1px solid black;
+  padding: 2%;
+}
+
+.review h5 {
+  background: black;
+  width: 100.3%;
+  margin-left: -8px;
+  margin-top: -25px;
+  padding: 2%;
+  color: white;
+}
+
+.review h6 {
+  border-bottom: 1px solid black;
+}
+
+.review p {
+  margin-top: -50px;
+}
