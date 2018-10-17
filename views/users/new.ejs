@@ -9,13 +9,14 @@
     <% include ../partials/nav.ejs %>
     <% include ../partials/header.ejs %>
     <form action="/users" method="POST">
+      <div class="notMuggle">
+        <input type="checkbox" id="isWizard" name="isWizard" class="checkbox"/>
+      </div>
+      <br/>
       <input type="text" id="username" name="username" placeholder="USERNAME"/> <br/>
       <input type="password" id="password" name="password" placeholder="PASSWORD"/> <br/>
-      <li>
-        I AM NOT A MUGGLE:
-      </li>
       <br/>
-      <input type="checkbox" id="isWizard" name="isWizard" class="checkbox"/> <br/>
+      <br/>
       <input type="submit" name ="action" value="REGISTER"/>
     </form>
   </body>
