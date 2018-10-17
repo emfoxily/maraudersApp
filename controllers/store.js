@@ -109,12 +109,7 @@ store.get('/:id', (req, res) => {
       })
     }
   } else {
-    Socks.findById(req.params.id, (error, foundSock) => {
-      res.render('socks/show.ejs', {
-        sock: foundSock,
-        currentUser: req.session.currentUser
-      })
-    })
+    res.redirect('/users/register')
   }
 })
 
