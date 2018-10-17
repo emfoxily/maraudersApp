@@ -1,7 +1,7 @@
 /*============== GENERAL ==============*/
 body {
   font-family: georgia;
-  background-image: url('../images/zwartevilt.png');
+  background-image: url('../images/feltbg.png');
 }
 
 a {
@@ -10,13 +10,14 @@ a {
 
 /*============== NAVIGATION ==============*/
 nav {
-  /* background-image: url('../images/wandDisplay.png'); */
+  /* background: rgb(43, 14, 29); */
   position: absolute;
   margin: auto;
-  width: 200px;
-  /* height: 200%; */
-  padding: 10px;
-  border-right: 20px solid rgb(14, 11, 11);
+  margin-top: 50px;
+  width: 100%;
+  height: 35px;
+  padding: 5px 20px;
+  border-right: 20px solid rgb(38, 34, 32);
   left: 0%;
   text-align: left;
   font-family: georgia;
@@ -26,12 +27,11 @@ nav {
 }
 
 nav a {
-  background: rgb(14, 11, 11);
+  background: rgb(43, 14, 29);
   color: rgb(244, 244, 244);
   width: 100px;
-  padding: 8px;
+  padding: 10px;
   text-decoration: none;
-  border-radius: 5px;
 }
 
 nav img {
@@ -45,16 +45,16 @@ button:hover {
   transition: 1s;
 }
 
-form input {
+nav form input {
+  background: rgb(43, 14, 29);
   font-size: 16px;
 }
 
 input {
-  background: black;
+  background: rgb(14, 11, 11);
   color: rgb(244, 244, 244);
   padding: 8px;
   width: 100px;
-  border-radius: 5px;
   border: none;
   outline: none;
   margin-bottom: 10px;
@@ -64,14 +64,20 @@ input {
   cursor: pointer;
 }
 
+form input:hover {
+  background: rgb(244, 244, 244);
+  color: rgb(43, 14, 29);
+  transition: 1s
+}
+
 /*============== HEADER ==============*/
 .header {
-  margin-top: 20px;
-  margin: -10px;
+  width: 400px;
+  margin: -60px auto;
 }
 
 .header img {
-  width: 100%;
+  width: 400px;
 }
 
 /*============== WAND INDEX PAGE ==============*/
@@ -83,7 +89,7 @@ input {
 .productContainer {
   background-image: url('../images/wandDisplay.png');
   margin: auto;
-  margin-top: -100px;
+  margin-top: 100px;
   width: 675px;
   height: 100%;
   padding-top: 200px;
@@ -113,7 +119,7 @@ input {
   background-image: url('../images/wandDisplay.png');
   width: 400px;
   margin: auto;
-  margin-top: -50px;
+  margin-top: 100px;
   padding: 50px;
   border: 20px solid rgb(14, 11, 11);
   list-style: none;

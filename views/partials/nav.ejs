@@ -1,22 +1,22 @@
 <nav>
   <% if (currentUser) { %>
-    <form action="/sessions?_method=DELETE" method="POST">
-      <img src="../images/shopping-cart.png"/>
-      <input type="submit" value="Logout"/>
-    </form>
+  <form action="/sessions?_method=DELETE" method="POST">
+    <input type="submit" value="Logout" />
     <% if (currentUser.username == 'emfoxily') { %>
     <a href="/create">
-      ADD NEW WAND
+      create new wand
     </a>
     <% } %>
-  <% } else { %>
-  <li>
-    <a href="/users/register">
-      register
-    </a>
-    <a href="/sessions/new">
-      login
-    </a>
-  </li>
-<% } %>
+    <% } else { %>
+    <li>
+      <a href="/users/register">
+        register
+      </a>
+      <a href="/sessions/new">
+        login
+      </a>
+    </li>
+    <% } %>
+    <%# <img src="../images/shopping-cart.png" /> %>
+  </form>
 </nav>
