@@ -1,6 +1,7 @@
 <nav>
   <% if (currentUser) { %>
     <form action="/sessions?_method=DELETE" method="POST">
+      <img src="../images/shopping-cart.png"/>
       <input type="submit" value="Logout"/>
     </form>
     <% if (currentUser.username == 'emfoxily') { %>
@@ -16,7 +17,6 @@
     <a href="/sessions/new">
       login
     </a>
-    <img src="../images/shopping-cart.png"/>
   </li>
 <% } %>
 </nav>

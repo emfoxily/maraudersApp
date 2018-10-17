@@ -5,25 +5,28 @@ body {
 }
 
 a {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 /*============== NAVIGATION ==============*/
 nav {
+  /* background-image: url('../images/wandDisplay.png'); */
   position: absolute;
   margin: auto;
-  width: 100%;
+  width: 200px;
+  /* height: 200%; */
   padding: 10px;
+  border-right: 20px solid rgb(14, 11, 11);
   left: 0%;
   text-align: left;
   font-family: georgia;
-  font-size: 15px;
+  font-size: 16px;
   text-transform: uppercase;
   z-index: 2;
 }
 
 nav a {
-  background: black;
+  background: rgb(14, 11, 11);
   color: rgb(244, 244, 244);
   width: 100px;
   padding: 8px;
@@ -31,10 +34,8 @@ nav a {
   border-radius: 5px;
 }
 
-nav a:hover {
-  background: rgb(244, 244, 244);
-  color: black;
-  transition: 1s;
+nav img {
+  width: 25px;
 }
 
 /*============== BUTTONS & INPUTS ==============*/
@@ -42,6 +43,10 @@ button:hover {
   background: rgb(244, 244, 244);
   color: black;
   transition: 1s;
+}
+
+form input {
+  font-size: 16px;
 }
 
 input {
@@ -54,15 +59,9 @@ input {
   outline: none;
   margin-bottom: 10px;
   font-family: georgia;
-  font-size: 15px;
+  font-size: 16px;
   text-transform: uppercase;
   cursor: pointer;
-}
-
-input:hover {
-  background: rgb(244, 244, 244);
-  color: black;
-  transition: 1s;
 }
 
 /*============== HEADER ==============*/
@@ -84,6 +83,7 @@ input:hover {
 .productContainer {
   background-image: url('../images/wandDisplay.png');
   margin: auto;
+  margin-top: -100px;
   width: 675px;
   height: 100%;
   padding-top: 200px;

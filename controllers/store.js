@@ -160,9 +160,15 @@ store.put('/:id', (req, res) => {
 store.put('/:id/cart', (req, res) => {
   let cart = []
   if (req.session.currentUser) {
-    Wands.findByIdAndUpdate(req.params.id, {$inc: {qty: -1}}, (error, qty) => {
-      res.redirect('/')
-    })
+    if (req.session.currentUser.isWizard == true) {
+      Wands.findByIdAndUpdate(req.params.id, {$inc: {qty: -1}}, (error, qty) => {
+        res.redirect('/')
+      })
+    } else {
+      Socks.findByIdAndUpdate(req.params.id, {$inc: {qty: -1}}, (error, qty) => {
+        res.redirect('/')
+      })
+    }
   } else {
     Socks.findByIdAndUpdate(req.params.id, {$inc: {qty: -1}}, (error, qty) => {
       res.redirect('/')
