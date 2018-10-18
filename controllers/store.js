@@ -129,17 +129,26 @@ store.delete('/:id', (req, res) => {
 //================= EDIT =================//
 store.get('/:id/edit', (req, res) => {
   if (req.session.currentUser) {
-    Wands.findById(req.params.id, (error, foundWand) => {
-      res.render('wands/update.ejs', {
-        wand: foundWand
+    if (req.session.currentUser.isWizard == true) {
+      Wands.findById(req.params.id, (error, foundWand) => {
+        res.render('wands/update.ejs', {
+          wand: foundWand,
+          currentUser: req.session.currentUser
+        })
       })
-    })
+    } else {
+      Socks.findById(req.params.id, (error, foundSock) => {
+        res.render('socks/update.ejs', {
+            sock: foundSock,
+            currentUser: req.session.currentUser
+          })
+      })
+    }
   } else {
     Socks.findById(req.params.id, (error, foundSock) => {
       res.render('socks/update.ejs', {
           sock: foundSock
-        }
-      )
+        })
     })
   }
 })

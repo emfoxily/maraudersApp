@@ -6,11 +6,8 @@
     <link rel="stylesheet" href="../css/ollivanders.css">
   </head>
   <body>
-    <div class = "header">
-      <a href="/">
-        <img src = "../images/ollivandersHeader.png"/>
-      </a>
-    </div>
+    <% include ../partials/nav.ejs %>
+    <% include ../partials/header.ejs %>
     <div class = "wandContainer">
       <form action="/<%= wand.id %>?_method=PUT" method="POST">
         <li>

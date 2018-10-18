@@ -6,34 +6,8 @@
     <link rel="stylesheet" href="../css/ollivanders.css">
   </head>
   <body>
-    <nav>
-      <% if (currentUser) { %>
-        <form action="/sessions?_method=DELETE" method="POST">
-          <input type="submit" value="Logout"/>
-        </form>
-        <% if (currentUser.username == 'emfoxily') { %>
-        <a href="/create">
-          ADD NEW WAND
-        </a>
-        <% } %>
-      <% } else { %>
-      <li>
-        <a href="/users/register">
-          register
-        </a>
-        <a href="/sessions/new">
-          login
-        </a>
-        <img src="../images/shopping-cart.png"/>
-      </li>
-    <% } %>
-    </nav>
-
-    <div class = "header">
-      <a href="/">
-        <img src = "../images/ollivandersHeader.png"/>
-      </a>
-    </div>
+    <% include ../partials/nav.ejs %>
+    <% include ../partials/header.ejs %>
     <div class = "wandContainer">
       <form action="/" method="POST">
         <li>
