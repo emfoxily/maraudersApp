@@ -4,7 +4,7 @@
 ## About The App
 Ever wondered what the wizarding world would do with all the technology available in the world today? Probably nothing because magic, but hey! Let's pretend the shops in Diagon Alley have websites -- and to get to those websites, you have to go through normal muggle websites.
 Like a sock website.
-The Laughing Sock acts as a portal for Ollivander's Wand Shop website. Think of the checkbox you usually have to click when signing up for new websites to say you're not a robot. Here, you have to specify that you're not a muggle.
+The Laughing Sock acts as a portal for Ollivander's Wand Shop website. Think of the checkbox you usually have to click when signing up for new websites to say you're not a robot. Here, you have to specify that you're not a muggle. (hint: it's hidden in the sock in the logo on the registration page!)
 Once you do that, it takes you straight to the wand shop's website where you can shop all the wands your heart desires! Logging out will take you back to the sock shop if you get cold feet. **ba dum tsss**
 
 ## Technologies Used
